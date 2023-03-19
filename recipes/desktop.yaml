@@ -7,6 +7,7 @@
 {% set hostname=hostname or "desktop" -%}
 {% set domain_name=domain_name or "domain" -%}
 
+profile: {{profile}}
 
 recipe:
   - action: recipe

@@ -1,5 +1,6 @@
 {% set profile=profile or "base" -%}
 {% set dist=dist or "bullseye" -%}
+{% set mirror=mirror or "http://ftp.de.debian.org/debian/" -%}
 {% set username=username or "user" -%}
 {% set user_fullname=user_fullname or "User" -%}
 {% set user_password=user_password or "user" -%}
@@ -15,10 +16,11 @@ recipe:
       keyboard: us
       profiles: {{profile}}
       auto_profiles: {{profile}}
-      dist: {{dist}}
       mirror_components: "main contrib non-free"
     env_variables:
       DISKTYPE: "DVD"
+      CODENAME: {{dist}}
+      DEBIAN_MIRROR: {{mirror}}
 
   - action: preseed
     description: Basic preseed file for minimum Debian system with EFI boot

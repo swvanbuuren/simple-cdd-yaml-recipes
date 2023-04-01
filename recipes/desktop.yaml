@@ -65,6 +65,7 @@ recipe:
       - libreoffice
       - qbittorrent
       - simple-scan
+      - system-config-printer
       - vlc
 
   - action: overlay

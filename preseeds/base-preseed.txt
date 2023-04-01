@@ -360,17 +360,17 @@ d-i apt-setup/contrib boolean true
 # PACKAGE SELECTION
 
 # Comment out if you don't want to install any packages at all
-# tasksel tasksel/first multiselect standard
+tasksel tasksel/first multiselect standard
 
 # Or choose to not get the tasksel dialog displayed at all (and don't install
 # any packages):
-d-i pkgsel/run_tasksel boolean false
+# d-i pkgsel/run_tasksel boolean false
 
 # Individual additional packages to install
 #d-i pkgsel/include string openssh-server build-essential
 # Whether to upgrade packages after debootstrap.
 # Allowed values: none, safe-upgrade, full-upgrade
-d-i pkgsel/upgrade select none
+d-i pkgsel/upgrade select full-upgrade
 
 # You can choose, if your system will report back on what software you have
 # installed, and what software you use. The default is not to report back,

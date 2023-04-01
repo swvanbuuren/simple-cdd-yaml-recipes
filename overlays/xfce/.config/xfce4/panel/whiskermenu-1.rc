@@ -1,4 +1,4 @@
-favorites=firefox-esr.desktop,xfce4-terminal-emulator.desktop
+favorites=firefox.desktop,xfce4-terminal-emulator.desktop
 recent=xfce4-terminal-emulator.desktop,xfce4-file-manager.desktop,org.gnome.Evince.desktop,xfce-mouse-settings.desktop,xfce-session-settings.desktop,thunar.desktop,firefox-esr.desktop,xfce4-web-browser.desktop
 button-icon=xfce4-whiskermenu
 button-single-row=false
@@ -77,4 +77,3 @@ name=Open URI
 pattern=^(file|http|https):\\/\\/(.*)$
 command=exo-open \\0
 regex=true
-

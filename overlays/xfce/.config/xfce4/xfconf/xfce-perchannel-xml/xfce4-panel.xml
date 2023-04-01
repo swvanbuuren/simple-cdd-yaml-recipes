@@ -54,13 +54,14 @@
       <property name="digital-format" type="string" value="%a %e %b %R"/>
     </property>
     <property name="plugin-14" type="string" value="actions">
+      <property name="appearance" type="uint" value="0"/>
+      <property name="ask-confirmation" type="bool" value="true"/>
       <property name="items" type="array">
         <value type="string" value="-lock-screen"/>
         <value type="string" value="-switch-user"/>
         <value type="string" value="-separator"/>
         <value type="string" value="-suspend"/>
         <value type="string" value="-hibernate"/>
-        <value type="string" value="-hybrid-sleep"/>
         <value type="string" value="-separator"/>
         <value type="string" value="-shutdown"/>
         <value type="string" value="-restart"/>

@@ -53,3 +53,13 @@ recipe:
   - action: overlay
     description: Lightdm greeter configuration
     source: overlays/lightdm-greeter
+
+  - action: overlay
+    description: Disable PC speaker beep
+    source: overlays/disable-pc-speaker
+
+  - action: script
+    description: Force Qt to use the Xfce platform theme
+    script: scripts/force_qt_platform_theme.sh
+    substitutions:
+      username: {{username}}

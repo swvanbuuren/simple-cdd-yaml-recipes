@@ -1,4 +1,8 @@
+{% set locale=locale or "en_US" -%}
+{% set keyboard=keyboard or "us" -%}
 {% set profile=profile or "base" -%}
+{% set mirror_components=mirror_components or "main contrib non-free" -%}
+{% set disk_type=disk_type or "DVD" -%}
 {% set dist=dist or "bullseye" -%}
 {% set mirror=mirror or "http://ftp.de.debian.org/debian/" -%}
 {% set username=username or "user" -%}
@@ -12,13 +16,13 @@ recipe:
   - action: conf
     description: Simple-CDD configuration settings
     variables:
-      locale: en_US
-      keyboard: us
+      locale: {{locale}}
+      keyboard: {{keyboard}}
       profiles: {{profile}}
       auto_profiles: {{profile}}
-      mirror_components: "main contrib non-free"
+      mirror_components: {{mirror_components}}
     env_variables:
-      DISKTYPE: "DVD"
+      DISKTYPE: {{disk_type}}
       CODENAME: {{dist}}
       DEBIAN_MIRROR: {{mirror}}
 
@@ -43,7 +47,9 @@ recipe:
       - apt-utils
       - busybox
       - ca-certificates
+      - dirmngr
       - dbus-user-session
+      - gnupg
       - initramfs-tools
       - iptables
       - lsb-release

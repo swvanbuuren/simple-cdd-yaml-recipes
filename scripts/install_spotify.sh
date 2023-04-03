@@ -1,4 +1,5 @@
 #!/bin/sh
+mkdir -p /etc/apt/keyrings
 curl -sS https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg \
     | gpg --dearmor --yes -o /etc/apt/keyrings/spotify.gpg
 echo "deb [ signed-by=/etc/apt/keyrings/spotify.gpg ] http://repository.spotify.com stable non-free" \

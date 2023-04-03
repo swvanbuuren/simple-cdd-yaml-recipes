@@ -64,6 +64,7 @@ recipe:
       - inkscape
       - keepassxc
       - libreoffice
+      - libreoffice-gnome
       - qbittorrent
       - simple-scan
       - system-config-printer

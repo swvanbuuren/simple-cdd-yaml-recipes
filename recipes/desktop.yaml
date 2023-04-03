@@ -6,6 +6,7 @@
 {% set root_password=root_password or "root" -%}
 {% set hostname=hostname or "desktop" -%}
 {% set domain_name=domain_name or "domain" -%}
+{% set user_email=user_email or "user@domain.com" -%}
 
 profile: {{profile}}
 
@@ -91,3 +92,11 @@ recipe:
   - action: script
     description: Install VS Codium
     script: scripts/install_vscodium.sh
+
+  - action: script
+    description: Configure git
+    script: scripts/configure_git.sh
+    substitutions:
+      username: {{user_fullname}}
+      user_email: {{user_email}}
+      editor: emacs

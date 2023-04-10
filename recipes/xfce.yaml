@@ -15,14 +15,15 @@ recipe:
       - lightdm
       - lightdm-gtk-greeter
       - lightdm-gtk-greeter-settings
-      - light-locker
       - mugshot
       - ncurses-base
       - ncurses-term
       - network-manager-gnome
+      - package-update-indicator
       - policykit-1
       - software-properties-gtk
       - unclutter-xfixes
+      - suckless-tools
       - xfce4
       - xfce4-dict
       - xfce4-clipman-plugin

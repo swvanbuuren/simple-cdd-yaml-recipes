@@ -5,6 +5,7 @@ cat > /tmp/qt5ct.conf << EOL
 [Appearance]
 color_scheme_path=/usr/share/qt5ct/colors/airy.conf
 custom_palette=false
+icon_theme=elementary-xfce
 standard_dialogs=default
 style=gtk2
 
@@ -27,8 +28,11 @@ toolbutton_style=4
 underline_shortcut=1
 wheel_scroll_lines=3
 
+[QSSEditor]
+geometry=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\x5t\0\0\x1\xa9\0\0\a\xf8\0\0\x3\xb4\0\0\x5u\0\0\x1\xc1\0\0\a\xf7\0\0\x3\xb3\0\0\0\0\0\0\0\0\rp\0\0\x5u\0\0\x1\xc1\0\0\a\xf7\0\0\x3\xb3)
+
 [SettingsWindow]
-geometry=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\0\0\0\0\0\0\0\0\x2\xe0\0\0\x2\x65\0\0\0\x1\0\0\0\x18\0\0\x2\xdf\0\0\x2\x64\0\0\0\0\0\0\0\0\a\x80\0\0\0\x1\0\0\0\x18\0\0\x2\xdf\0\0\x2\x64)
+geometry=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\x5G\0\0\x1\x91\0\0\b'\0\0\x3\xfb\0\0\x5H\0\0\x1\xa9\0\0\b&\0\0\x3\xfa\0\0\0\0\0\0\0\0\rp\0\0\x5H\0\0\x1\xa9\0\0\b&\0\0\x3\xfa)
 EOL
 su - {{username}} << 'EOF'
 mkdir -p $HOME/.config/qt5ct

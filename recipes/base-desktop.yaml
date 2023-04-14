@@ -1,0 +1,76 @@
+{% set profile=profile or "base-desktop" -%}
+{% set dist=dist or "bullseye" -%}
+{% set username=username or "user" -%}
+{% set user_fullname=user_fullname or "Firstname Lastname" -%}
+{% set user_password=user_password or "user" -%}
+{% set root_password=root_password or "root" -%}
+{% set hostname=hostname or "desktop" -%}
+{% set domain_name=domain_name or "domain" -%}
+{% set user_email=user_email or "user@domain.com" -%}
+
+profile: {{profile}}
+
+recipe:
+  - action: recipe
+    description: Load base recipe
+    recipe: recipes/base.yaml
+    substitutions:
+      profile: {{profile}}
+      dist: {{dist}}
+      username: {{username}}
+      user_fullname: {{user_fullname}}
+      user_password: {{user_password}}
+      root_password: {{root_password}}
+      hostname: {{hostname}}
+      domain_name: {{domain_name}}
+
+  - action: recipe
+    description: Load xfce recipe
+    recipe: recipes/xfce.yaml
+    substitutions:
+      username: {{username}}
+
+  - action: apt
+    description: General packages
+    packages:
+      - alsa-utils
+      - bash
+      - bash-completion
+      - bzip2
+      - curl
+      - emacs
+      - evince
+      - git
+      - gawk
+      - gnome-disk-utility
+      - gpg
+      - mousepad
+      - network-manager
+      - pavucontrol
+      - pulseaudio
+      - rsync
+      - udev
+      - screen
+      - synaptic
+      - tar
+      - wget
+
+  - action: overlay
+    description: Emacs settings for {{username}}
+    user: {{username}}
+    source: overlays/emacs
+
+  - action: overlay
+    description: Emacs settings for root
+    user: root
+    source: overlays/emacs
+
+  - action: script
+    description: Configure mousepad
+    script: scripts/configure_mousepad.sh
+    substitutions:
+      username: {{username}}
+
+  - action: script
+    description: Install Firefox for Ubuntu (20.04)
+    script: scripts/install_firefox_ubuntu.sh

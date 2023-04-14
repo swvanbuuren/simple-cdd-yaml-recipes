@@ -13,7 +13,7 @@ profile: {{profile}}
 recipe:
   - action: recipe
     description: Load base recipe
-    recipe: recipes/base.yaml
+    recipe: recipes/base-desktop.yaml
     substitutions:
       profile: {{profile}}
       dist: {{dist}}
@@ -22,37 +22,7 @@ recipe:
       user_password: {{user_password}}
       root_password: {{root_password}}
       hostname: {{hostname}}
-
-  - action: recipe
-    description: Load xfce recipe
-    recipe: recipes/xfce.yaml
-    substitutions:
-      username: {{username}}
-
-  - action: apt
-    description: General packages
-    packages:
-      - alsa-utils
-      - bash
-      - bash-completion
-      - bzip2
-      - curl
-      - emacs
-      - evince
-      - git
-      - gawk
-      - gnome-disk-utility
-      - gpg
-      - mousepad
-      - network-manager
-      - pavucontrol
-      - pulseaudio
-      - rsync
-      - udev      
-      - screen
-      - synaptic
-      - tar
-      - wget
+      domain_name: {{domain_name}}
 
   - action: apt
     description: Utility packages
@@ -69,26 +39,6 @@ recipe:
       - simple-scan
       - system-config-printer
       - vlc
-
-  - action: overlay
-    description: Emacs settings for {{username}}
-    user: {{username}}
-    source: overlays/emacs
-
-  - action: overlay
-    description: Emacs settings for root
-    user: root
-    source: overlays/emacs
-
-  - action: script
-    description: Configure mousepad
-    script: scripts/configure_mousepad.sh
-    substitutions:
-      username: {{username}}
-
-  - action: script
-    description: Install Firefox for Ubuntu (20.04)
-    script: scripts/install_firefox_ubuntu.sh
 
   - action: script
     description: Install VS Codium

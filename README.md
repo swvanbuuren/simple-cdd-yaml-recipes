@@ -8,11 +8,11 @@ preseeds, overlays and scripts.
 
 The provided [desktop recipe](./recipes/desktop.yaml) creates a Simple-CDD
 profile for an UEFI capable desktop system. One way to test the installation in
-action, is by using an UEFI capable Qemu VM.
+action, is by using an UEFI capable Qemu VM. The following setup is meant for Debian systems and was tested on Debian Bullseye.
 
 ## Preparations
 
-In order to be able to build an ISO image, first install the required package
+In order to be able to build an ISO image, first install the required packages
 for Simple-CDD:
 ```
 sudo apt install simple-cdd xorriso
@@ -29,7 +29,7 @@ for more information.
 
 ## Setup Qemu
 
-To test the installation image Qemu can be used. Install the required package
+To test the installation image Qemu can be used. Install the required packages
 using:
 ```
 sudo apt install qemu-utils qemu-system-x86 ovmf

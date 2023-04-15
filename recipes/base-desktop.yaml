@@ -44,6 +44,7 @@ recipe:
       - gawk
       - gnome-disk-utility
       - gpg
+      - libnotify-bin
       - mousepad
       - network-manager
       - pavucontrol

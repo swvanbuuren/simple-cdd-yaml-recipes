@@ -20,5 +20,5 @@ for mount_point in $MOUNT_POINTS; do
     # create mount points
     mkdir -p /mnt/nas/${mount_point}
     # modify /etc/fstab
-    echo "${SERVER_IP}:/mnt/${mount_point} /mnt/nas/${mount_point} nfs auto,rw,users,noatime,nolock,actimeo=1800 0 0" >> /etc/fstab
+    echo "${SERVER_IP}:/mnt/${mount_point} /mnt/nas/${mount_point} nfs auto,rw,users,noatime,nolock,actimeo=1800,_netdev 0 0" >> /etc/fstab
 done

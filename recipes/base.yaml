@@ -48,6 +48,7 @@ recipe:
       - busybox
       - ca-certificates
       - dirmngr
+      - dos2unix
       - dbus-user-session
       - gnupg
       - initramfs-tools

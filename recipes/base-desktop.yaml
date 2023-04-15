@@ -52,6 +52,7 @@ recipe:
       - rsync
       - udev
       - screen
+      - seahorse
       - synaptic
       - tar
       - wget

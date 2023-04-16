@@ -66,6 +66,10 @@ recipe:
       username: {{username}}
     script: scripts/add_sudoer.sh
 
+  - action: run
+    description: Make sure debian UEFI file is registered as boot entry
+    command: sudo grub-install --efi-directory /boot/efi --force-extra-removable --recheck && sudo update-grub
+
   - action: script
     description: Configure grub (output and no menu shown)
     script: scripts/configure_grub.sh

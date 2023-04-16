@@ -260,14 +260,14 @@ d-i partman-auto/expert_recipe string         \
    gpt-boot-root-swap ::                      \
       200 200 200 free                        \
          $iflabel{ gpt }                      \
-	 $reusemethod{ }                      \
+	     $reusemethod{ }                      \
          method{ efi }                        \
-	 format{ } .                          \
+	     format{ } .                          \
       512 512 512 ext3                        \
          $primary{ }                          \
-	 $bootable{ }                         \
+	     $bootable{ }                         \
          method{ format }                     \
-	 format{ }                            \
+	     format{ }                            \
          use_filesystem{ } filesystem{ ext3 } \
          mountpoint{ /boot } .                \
       1000 2000000 -1 ext4                    \

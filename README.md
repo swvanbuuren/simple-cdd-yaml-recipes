@@ -7,8 +7,15 @@ preseeds, overlays and scripts.
 # Testing
 
 The provided [desktop recipe](./recipes/desktop.yaml) creates a Simple-CDD
-profile for an UEFI capable desktop system. One way to test the installation in
-action, is by using an UEFI capable Qemu VM. The following setup is meant for Debian systems and was tested on Debian Bullseye.
+profile for an UEFI capable desktop system. While Simple-CDD [offers a qemu
+option](https://salsa.debian.org/debian/simple-cdd/-/blob/master/README?plain=1#L49)
+to test the installation of a CD or DVD created with Simple-CDD, it does not
+support UEFI. The following shows how to boot a Qemu with UEFI support in order
+to test the installation in EFI mode. 
+
+## Prerequisites
+
+The following setup is meant for Debian systems and was tested on Debian Bullseye.
 
 ## Preparations
 

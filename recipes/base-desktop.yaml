@@ -39,6 +39,7 @@ recipe:
       - bzip2
       - curl
       - emacs
+      - eog
       - evince
       - git
       - gawk

@@ -48,6 +48,7 @@ recipe:
       - libnotify-bin
       - mousepad
       - network-manager
+      - p7zip
       - pavucontrol
       - pulseaudio
       - rsync

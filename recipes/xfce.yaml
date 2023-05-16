@@ -10,6 +10,7 @@ recipe:
       - dmz-cursor-theme
       - elementary-xfce-icon-theme
       - fonts-ubuntu
+      - gnome-calculator
       - greybird-gtk-theme
       - gvfs
       - lightdm

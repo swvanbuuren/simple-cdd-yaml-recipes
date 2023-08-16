@@ -4,7 +4,7 @@ This repository contains example recipes for
 [simple-cdd-yaml](https://github.com/swvanbuuren/simple-cdd-yaml) including
 preseeds, overlays and scripts.
 
-# Testing
+# Testing on Qemu with UEFI support
 
 The provided [desktop recipe](./recipes/desktop.yaml) creates a Simple-CDD
 profile for an UEFI capable desktop system. While Simple-CDD [offers a qemu

@@ -68,7 +68,7 @@ recipe:
 
   - action: run
     description: Make sure debian UEFI file is registered as boot entry
-    command: sudo grub-install --efi-directory /boot/efi --force-extra-removable --recheck && sudo update-grub
+    command: grub-install --efi-directory /boot/efi --force-extra-removable --recheck && update-grub
 
   - action: script
     description: Configure grub (output and no menu shown)

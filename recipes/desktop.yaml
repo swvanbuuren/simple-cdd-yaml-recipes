@@ -51,3 +51,8 @@ recipe:
       username: {{user_fullname}}
       user_email: {{user_email}}
       editor: emacs
+
+  - action: overlay
+    description: Disable audio module suspension (to avoid audio pops)
+    user: {{username}}
+    source: overlays/disable-audio-suspension

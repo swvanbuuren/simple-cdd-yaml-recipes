@@ -185,7 +185,8 @@
       <property name="&lt;Alt&gt;Insert" type="string" value="add_workspace_key"/>
       <property name="&lt;Primary&gt;F1" type="string" value="workspace_1_key"/>
       <property name="override" type="bool" value="true"/>
-      <property name="&lt;Super&gt;l" type="string" value="xflock4"/>
+      <property name="Super_L" type="string" value="xfce4-popup-whiskermenu"/>
+      <property name="&lt;Super&gt;l" type="string" value="slock"/>
     </property>
   </property>
   <property name="providers" type="array">

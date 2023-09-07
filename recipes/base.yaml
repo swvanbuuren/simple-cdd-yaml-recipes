@@ -1,9 +1,9 @@
 {% set locale=locale or "en_US" -%}
 {% set keyboard=keyboard or "us" -%}
 {% set profile=profile or "base" -%}
-{% set mirror_components=mirror_components or "main contrib non-free" -%}
+{% set mirror_components=mirror_components or "main" -%}
 {% set disk_type=disk_type or "DVD" -%}
-{% set dist=dist or "bullseye" -%}
+{% set dist=dist or "bookworm" -%}
 {% set mirror=mirror or "http://ftp.de.debian.org/debian/" -%}
 {% set username=username or "user" -%}
 {% set user_fullname=user_fullname or "User" -%}
@@ -11,6 +11,8 @@
 {% set root_password=root_password or "root" -%}
 {% set hostname=hostname or "base" -%}
 {% set domain_name=domain_name or "domain" -%}
+
+profile: {{profile}}
 
 recipe:
   - action: conf
@@ -59,6 +61,7 @@ recipe:
       - systemd
       - systemd-timesyncd
       - unattended-upgrades
+      - zstd
 
   - action: script
     description: Add {{username}} to sudoers

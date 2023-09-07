@@ -1,5 +1,5 @@
 {% set profile=profile or "base-desktop" -%}
-{% set dist=dist or "bullseye" -%}
+{% set dist=dist or "bookworm" -%}
 {% set username=username or "user" -%}
 {% set user_fullname=user_fullname or "Firstname Lastname" -%}
 {% set user_password=user_password or "user" -%}

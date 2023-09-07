@@ -9,7 +9,6 @@ recipe:
       - dbus-x11
       - dmz-cursor-theme
       - elementary-xfce-icon-theme
-      - fonts-ubuntu
       - gnome-calculator
       - greybird-gtk-theme
       - gvfs
@@ -65,3 +64,9 @@ recipe:
     script: scripts/force_qt_platform_theme.sh
     substitutions:
       username: {{username}}
+
+  - action: script
+    description: Installing packages after installation (requires internet!)
+    script: scripts/install_packages.sh
+    substitutions:
+      username: fonts-ubuntu

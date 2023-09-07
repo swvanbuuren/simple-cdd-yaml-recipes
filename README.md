@@ -36,11 +36,11 @@ Build the docker image with the following command (again replace `<dist>`):
 docker build -t <dist>-simple-cdd .
 ```
 
-## Build docker image
+## Call simple-cdd inside docker
 
 For repeated build attempts, it makes sense to wrap the dockerized simple-CDD
 call into a bash script e.g. called `docker_simple_cdd` (don't forget to replace
-`<dist>`! and make the script executable using `chmod +x docker_simple_cdd`):
+`<dist>` and make the script executable using `chmod +x docker_simple_cdd`):
 ```bash
 #!/bin/bash
 ARGS="$@"

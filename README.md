@@ -4,6 +4,55 @@ This repository contains example recipes for
 [simple-cdd-yaml](https://github.com/swvanbuuren/simple-cdd-yaml) including
 preseeds, overlays and scripts.
 
+# Docker image build
+
+To make sure that the host system configuration does not interfere with a
+simple-CDD build, it might be useful to build the image inside a docker
+container. The following lists instructions to setup such a docker image.
+
+## Dockerfile
+
+First create a file called `Dockerfile` with the contents below. Replace
+`<dist>` with the Debian version for which you'd like to build your image, e.g.
+`buster`, `bullseye` or `bookworm`:
+
+```docker
+FROM debian:<dist>-slim
+
+RUN apt-get update
+RUN apt-get -y install --install-recommends simple-cdd
+RUN apt-get -y install --install-recommends xorriso
+RUN apt-get -y install --install-recommends gpg
+
+RUN useradd -ms /bin/bash user
+USER user
+WORKDIR /home/user
+```
+
+## Build docker image
+
+Build the docker image with the following command (again replace `<dist>`):
+```bash
+docker build -t <dist>-simple-cdd .
+```
+
+## Build docker image
+
+For repeated build attempts, it makes sense to wrap the dockerized simple-CDD
+call into a bash script e.g. called `docker_simple_cdd` (don't forget to replace
+`<dist>`! and make the script executable using `chmod +x docker_simple_cdd`):
+```bash
+#!/bin/bash
+ARGS="$@"
+docker run -it --mount "type=bind,source=$(pwd),destination=/home/user" <dist>-simple-cdd /bin/sh -c "simple-cdd $ARGS"
+```
+
+Now you can build an image e.g. from the desktop profile by issuing:
+
+```bash
+./docker_simple_cdd --profiles desktop
+```
+
 # Testing on Qemu with UEFI support
 
 The provided [desktop recipe](./recipes/desktop.yaml) creates a Simple-CDD

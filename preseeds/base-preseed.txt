@@ -318,6 +318,8 @@ d-i partman-partitioning/default_label string gpt
 # Choose, if you want to scan additional installation media
 # (default: false).
 d-i apt-setup/cdrom/set-first boolean false
+# You can choose to install non-free firmware.
+d-i apt-setup/non-free-firmware boolean true
 # You can choose to install non-free and contrib software.
 d-i apt-setup/non-free boolean true
 d-i apt-setup/contrib boolean true

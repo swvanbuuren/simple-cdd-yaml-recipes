@@ -64,10 +64,22 @@ recipe:
     user: {{username}}
     source: overlays/emacs
 
+  - action: script
+    description: Emacs packages for {{username}}
+    source: script/install_emacs_packages.sh
+    substitutions:
+      home_dir: /home/{{username}}
+
   - action: overlay
     description: Emacs settings for root
     user: root
     source: overlays/emacs
+
+  - action: script
+    description: Emacs packages for root
+    source: script/install_emacs_packages.sh
+    substitutions:
+      home_dir: /root
 
   - action: script
     description: Configure mousepad

@@ -68,7 +68,7 @@ recipe:
     description: Emacs packages for {{username}}
     script: scripts/install_emacs_packages.sh
     substitutions:
-      home_dir: /home/{{username}}
+      username: {{username}}
 
   - action: overlay
     description: Emacs settings for root
@@ -79,7 +79,7 @@ recipe:
     description: Emacs packages for root
     script: scripts/install_emacs_packages.sh
     substitutions:
-      home_dir: /root
+      username: root
 
   - action: script
     description: Configure mousepad

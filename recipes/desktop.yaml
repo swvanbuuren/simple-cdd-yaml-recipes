@@ -48,7 +48,7 @@ recipe:
     description: Configure git
     script: scripts/configure_git.sh
     substitutions:
-      username: {{user_fullname}}
+      user_fullname: {{user_fullname}}
       user_email: {{user_email}}
       editor: emacs -nw
 

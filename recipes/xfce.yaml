@@ -69,4 +69,4 @@ recipe:
     description: Installing packages after installation (requires internet!)
     script: scripts/install_packages.sh
     substitutions:
-      username: fonts-ubuntu
+      packages: fonts-ubuntu

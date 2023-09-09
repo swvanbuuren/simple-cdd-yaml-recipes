@@ -42,7 +42,7 @@
       <property name="hidden-legacy-items" type="array">
       </property>
       <property name="icon-size" type="int" value="22"/>
-      <property name="symbolic-icons" type="bool" value="false"/>
+      <property name="symbolic-icons" type="bool" value="true"/>
     </property>
     <property name="plugin-8" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>

@@ -10,6 +10,10 @@ To make sure that the host system configuration does not interfere with a
 simple-CDD build, it might be useful to build the image inside a docker
 container. The following lists instructions to setup such a docker image.
 
+## Install and configure docker
+
+First, install and configure docker. Please refer to the script [setup_docker.sh](scripts/setup_docker.sh) on how to do this.
+
 ## Dockerfile
 
 First create a file called `Dockerfile` with the contents below. Replace

@@ -60,7 +60,7 @@ recipe:
       - systemd-timesyncd
       - unattended-upgrades
 
-  - action: script
+  - action: run
     description: Add {{username}} to sudoers
     substitutions:
       username: {{username}}
@@ -70,7 +70,7 @@ recipe:
     description: Make sure debian UEFI file is registered as boot entry
     command: grub-install --efi-directory /boot/efi --force-extra-removable --recheck && update-grub
 
-  - action: script
+  - action: run
     description: Configure grub (output and no menu shown)
     script: scripts/configure_grub.sh
 

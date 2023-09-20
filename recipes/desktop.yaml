@@ -40,11 +40,11 @@ recipe:
       - system-config-printer
       - vlc
 
-  - action: script
+  - action: run
     description: Install VS Codium
     script: scripts/install_vscodium.sh
 
-  - action: script
+  - action: run
     description: Configure git
     script: scripts/configure_git.sh
     substitutions:

@@ -59,13 +59,13 @@ recipe:
     description: Disable PC speaker beep
     source: overlays/disable-pc-speaker
 
-  - action: script
+  - action: run
     description: Force Qt to use the Xfce platform theme
     script: scripts/force_qt_platform_theme.sh
     substitutions:
       username: {{username}}
 
-  - action: script
+  - action: run
     description: Installing packages after installation (requires internet!)
     script: scripts/install_packages.sh
     substitutions:

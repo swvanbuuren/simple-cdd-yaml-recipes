@@ -64,7 +64,7 @@ recipe:
     user: {{username}}
     source: overlays/emacs
 
-  - action: script
+  - action: run
     description: Emacs packages for {{username}}
     script: scripts/install_emacs_packages.sh
     substitutions:
@@ -75,18 +75,18 @@ recipe:
     user: root
     source: overlays/emacs
 
-  - action: script
+  - action: run
     description: Emacs packages for root
     script: scripts/install_emacs_packages.sh
     substitutions:
       username: root
 
-  - action: script
+  - action: run
     description: Configure mousepad
     script: scripts/configure_mousepad.sh
     substitutions:
       username: {{username}}
 
-  - action: script
+  - action: run
     description: Install Firefox for Ubuntu (20.04)
     script: scripts/install_firefox_ubuntu.sh

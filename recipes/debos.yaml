@@ -1,0 +1,101 @@
+{% set architecture=architecture or "amd64" %}
+{% set username=username or "user" %}
+{% set dist=dist or "bookworm" %}
+{% set size=size or "10G" %}
+{% set cmdline=cmdline or "console=tty0 console=ttyS0,115200n8 rootwait ro quiet splash plymouth.ignore-serial-consoles fsck.mode=auto fsck.repair=yes" %}
+
+recipe:
+
+  - action: debos
+    description: Debos recipe export settings and actions
+    architecture: {{ architecture }}
+    chroot_default: true
+    pre-actions:
+      - action: debootstrap
+        suite: {{ dist }}
+        components:
+          - main
+          - contrib
+          - non-free
+          - non-free-firmware
+        mirror: https://deb.debian.org/debian
+        variant: minbase
+
+      - action: apt
+        description: "Core packages"
+        packages:
+          - adduser
+          - apparmor
+          - apt
+          - apt-transport-https
+          - apt-utils
+          - ca-certificates
+          - linux-headers-{{ architecture }}
+          - initramfs-tools
+          - openssh-server
+          - sudo
+          - systemd
+          - systemd-boot
+          - systemd-resolved
+          - systemd-timesyncd
+          - unattended-upgrades
+
+      - action: run
+        description: Set hostname
+        command: echo debian-{{ dist }}-{{ architecture }} > /etc/hostname
+
+      - action: run
+        description: Setup networking
+        script: scripts/setup-networking.sh
+        substitutions:
+          dist: {{dist}}
+      
+      - action: run
+        description: Setup user
+        script: scripts/setup-user.sh
+        substitutions:
+          username: {{username}}
+
+    post-actions:
+      - action: image-partition
+        imagename: debian-{{ dist }}-{{ architecture }}.img
+        imagesize: {{ size }}
+        partitiontype: gpt
+        mountpoints:
+          - mountpoint: /
+            partition: system
+          - mountpoint: /boot/efi
+            partition: EFI
+        partitions:
+          - name: EFI
+            fs: vfat
+            start: 0%
+            end: 256M
+            flags: [ boot ]
+          - name: system
+            fs: ext4
+            start: 256M
+            end: 100%
+
+      - action: filesystem-deploy
+        description: Deploying file system onto image
+        append-kernel-cmdline: {{cmdline}}
+
+      - action: run
+        description: Install UEFI bootloader
+        command: bootctl --path=/boot/efi install
+
+      - action: run
+        description: Create the default entry for bootloader
+        command: mkdir /boot/efi/Default
+
+      - action: apt
+        description: Kernel for {{ architecture }}
+        recommends: true
+        packages:
+          - linux-image-{{ architecture }}
+          - libgles2-mesa
+
+      - action: run
+        description: Install kernel into EFI
+        command: KERNEL=`find /boot/vmlinuz-* -printf "%f\n" | head -n1 | sed 's/vmlinuz-//'`; kernel-install add $KERNEL /boot/vmlinuz-$KERNEL

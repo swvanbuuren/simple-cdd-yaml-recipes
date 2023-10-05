@@ -7,6 +7,7 @@
 {% set hostname=hostname or "desktop" -%}
 {% set domain_name=domain_name or "domain" -%}
 {% set user_email=user_email or "user@domain.com" -%}
+{% set debos=debos or false %}
 
 profile: {{profile}}
 
@@ -23,6 +24,7 @@ recipe:
       root_password: {{root_password}}
       hostname: {{hostname}}
       domain_name: {{domain_name}}
+      debos: {{debos}}
 
   - action: apt
     description: Utility packages

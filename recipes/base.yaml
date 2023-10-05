@@ -11,10 +11,15 @@
 {% set root_password=root_password or "root" -%}
 {% set hostname=hostname or "base" -%}
 {% set domain_name=domain_name or "domain" -%}
+{% set debos=debos or false %}
 
 profile: {{profile}}
 
 recipe:
+  - action: recipe
+    description: Recipe with debos steps
+    recipe: recipes/debos.yaml
+
   - action: conf
     description: Simple-CDD configuration settings
     variables:
@@ -69,6 +74,8 @@ recipe:
       username: {{username}}
     script: scripts/add_sudoer.sh
 
+{% if not debos %}
+
   - action: run
     description: Make sure debian UEFI file is registered as boot entry
     command: grub-install --efi-directory /boot/efi --force-extra-removable --recheck && update-grub
@@ -76,6 +83,8 @@ recipe:
   - action: run
     description: Configure grub (output and no menu shown)
     script: scripts/configure_grub.sh
+
+{% endif%}
 
   - action: overlay
     description: Bash settings for {{username}}

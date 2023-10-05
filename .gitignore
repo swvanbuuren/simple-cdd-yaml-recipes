@@ -2,5 +2,6 @@ extra/
 images/
 profiles/
 tmp/
+debos/
 .gnupg/
 docker_simple_cdd

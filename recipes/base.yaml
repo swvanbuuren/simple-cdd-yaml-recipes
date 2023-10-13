@@ -19,6 +19,9 @@ recipe:
   - action: recipe
     description: Recipe with debos steps
     recipe: recipes/debos.yaml
+    substitutions:
+      dist: {{dist}}
+      username: {{username}}
 
   - action: conf
     description: Simple-CDD configuration settings

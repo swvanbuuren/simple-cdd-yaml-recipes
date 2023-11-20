@@ -24,9 +24,7 @@ First create a file called `Dockerfile` with the contents below. Replace
 FROM debian:<dist>-slim
 
 RUN apt-get update
-RUN apt-get -y install --install-recommends simple-cdd
-RUN apt-get -y install --install-recommends xorriso
-RUN apt-get -y install --install-recommends gpg
+RUN apt-get -y install --install-recommends simple-cdd xorriso gpg
 
 RUN useradd -ms /bin/bash user
 USER user

@@ -9,6 +9,7 @@ recipe:
       - dbus-x11
       - dmz-cursor-theme
       - elementary-xfce-icon-theme
+      - file-roller
       - gnome-calculator
       - greybird-gtk-theme
       - gvfs

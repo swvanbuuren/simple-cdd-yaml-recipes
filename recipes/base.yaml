@@ -82,7 +82,7 @@ recipe:
     substitutions:
       username: {{username}}
       groups: admin,adm,dialout,cdrom,plugdev,power,audio,dip,video,staff,shared,sudo
-    script: scripts/add_sudoer.sh
+    script: scripts/setup_user_groups.sh
 
 {% if not debos %}
 

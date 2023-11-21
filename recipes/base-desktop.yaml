@@ -43,6 +43,7 @@ recipe:
       - emacs
       - eog
       - evince
+      - firefox-esr
       - git
       - gawk
       - gnome-disk-utility
@@ -88,7 +89,3 @@ recipe:
     script: scripts/configure_mousepad.sh
     substitutions:
       username: {{username}}
-
-  - action: run
-    description: Install Firefox for Ubuntu (20.04)
-    script: scripts/install_firefox_ubuntu.sh

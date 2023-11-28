@@ -1,4 +1,5 @@
 #!/bin/sh
+USERNAME={{username}}
 apt-get update
 apt-get install --no-install-recommends -y dconf-cli
 cat > /tmp/mousepad_settings << EOL
@@ -20,6 +21,6 @@ height=594
 maximized=false
 width=758
 EOL
-su - {{username}} << 'EOF'
+su - $USERNAME << 'EOF'
 dbus-launch dconf load /org/xfce/mousepad/ < /tmp/mousepad_settings
 EOF

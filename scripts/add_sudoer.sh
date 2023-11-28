@@ -1,4 +1,5 @@
 #!/bin/bash
-/usr/sbin/usermod -a -G sudo {{username}}
+USERNAME={{username}}
+/usr/sbin/usermod -a -G sudo $USERNAME
 mkdir -p /etc/sudoers.d
-echo "{{username}}	ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/{{username}}
+echo "$USERNAME	ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/$USERNAME

@@ -81,7 +81,19 @@ recipe:
     description: Add {{username}} to several groups
     substitutions:
       username: {{username}}
-      groups: admin,adm,dialout,cdrom,plugdev,power,audio,dip,video,staff,shared,sudo
+      groups:
+        - admin
+        - adm
+        - dialout
+        - cdrom
+        - plugdev
+        - power
+        - audio
+        - dip
+        - video
+        - staff
+        - shared
+        - sudo
     script: scripts/setup_user_groups.sh
 
 {% if not debos %}

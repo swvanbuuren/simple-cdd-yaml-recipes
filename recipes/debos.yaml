@@ -4,7 +4,7 @@
 {% set size=size or "10G" %}
 {% set cmdline=cmdline or "console=tty0 console=ttyS0,115200n8 rootwait ro quiet splash plymouth.ignore-serial-consoles fsck.mode=auto fsck.repair=yes" %}
 
-recipe:
+actions:
 
   - action: debos
     description: Debos recipe export settings and actions

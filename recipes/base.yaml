@@ -15,7 +15,7 @@
 
 profile: {{profile}}
 
-recipe:
+actions:
   - action: recipe
     description: Recipe with debos steps
     recipe: recipes/debos.yaml

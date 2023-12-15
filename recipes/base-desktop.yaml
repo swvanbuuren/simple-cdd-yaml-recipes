@@ -11,7 +11,7 @@
 
 profile: {{profile}}
 
-recipe:
+actions:
   - action: recipe
     description: Load base recipe
     recipe: recipes/base.yaml

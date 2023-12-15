@@ -1,6 +1,6 @@
 {% set username=username or "user" -%}
 
-recipe:
+actions:
   - action: apt
     description: GUI packages
     packages:

@@ -47,13 +47,13 @@ recipe:
       - action: run
         description: Setup networking
         script: scripts/setup-networking.sh
-        substitutions:
+        variables:
           dist: {{dist}}
       
       - action: run
         description: Setup user
         script: scripts/setup-user.sh
-        substitutions:
+        variables:
           username: {{username}}
 
     post-actions:

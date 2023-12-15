@@ -15,7 +15,7 @@ recipe:
   - action: recipe
     description: Load base recipe
     recipe: recipes/base-desktop.yaml
-    substitutions:
+    variables:
       profile: {{profile}}
       dist: {{dist}}
       username: {{username}}
@@ -49,7 +49,7 @@ recipe:
   - action: run
     description: Configure git
     script: scripts/configure_git.sh
-    substitutions:
+    variables:
       user_fullname: {{user_fullname}}
       user_email: {{user_email}}
       editor: emacs -nw

@@ -19,7 +19,7 @@ recipe:
   - action: recipe
     description: Recipe with debos steps
     recipe: recipes/debos.yaml
-    substitutions:
+    variables:
       dist: {{dist}}
       username: {{username}}
 
@@ -39,7 +39,7 @@ recipe:
   - action: preseed
     description: Basic preseed file for minimum Debian system with EFI boot
     preconf: preseeds/base-preseed.txt
-    substitutions:
+    variables:
       user_fullname: {{user_fullname}}
       username: {{username}}
       user_password: {{user_password}}
@@ -73,13 +73,13 @@ recipe:
 
   - action: run
     description: Add {{username}} to sudoers
-    substitutions:
+    variables:
       username: {{username}}
     script: scripts/add_sudoer.sh
 
   - action: run
     description: Add {{username}} to several groups
-    substitutions:
+    variables:
       username: {{username}}
       groups:
         - admin

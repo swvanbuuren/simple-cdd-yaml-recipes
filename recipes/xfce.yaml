@@ -63,11 +63,11 @@ recipe:
   - action: run
     description: Force Qt to use the Xfce platform theme
     script: scripts/force_qt_platform_theme.sh
-    substitutions:
+    variables:
       username: {{username}}
 
   - action: run
     description: Installing packages after installation (requires internet!)
     script: scripts/install_packages.sh
-    substitutions:
+    variables:
       packages: fonts-ubuntu

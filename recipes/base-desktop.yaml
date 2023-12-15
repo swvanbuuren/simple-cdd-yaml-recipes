@@ -15,7 +15,7 @@ recipe:
   - action: recipe
     description: Load base recipe
     recipe: recipes/base.yaml
-    substitutions:
+    variables:
       profile: {{profile}}
       dist: {{dist}}
       username: {{username}}
@@ -29,7 +29,7 @@ recipe:
   - action: recipe
     description: Load xfce recipe
     recipe: recipes/xfce.yaml
-    substitutions:
+    variables:
       username: {{username}}
 
   - action: apt
@@ -70,7 +70,7 @@ recipe:
   - action: run
     description: Emacs packages for {{username}}
     script: scripts/install_emacs_packages.sh
-    substitutions:
+    variables:
       username: {{username}}
 
   - action: overlay
@@ -81,11 +81,11 @@ recipe:
   - action: run
     description: Emacs packages for root
     script: scripts/install_emacs_packages.sh
-    substitutions:
+    variables:
       username: root
 
   - action: run
     description: Configure mousepad
     script: scripts/configure_mousepad.sh
-    substitutions:
+    variables:
       username: {{username}}

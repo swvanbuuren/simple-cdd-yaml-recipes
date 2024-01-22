@@ -99,3 +99,10 @@ actions:
       - action: run
         description: Install kernel into EFI
         command: KERNEL=`find /boot/vmlinuz-* -printf "%f\n" | head -n1 | sed 's/vmlinuz-//'`; kernel-install add $KERNEL /boot/vmlinuz-$KERNEL
+
+      - action: run
+        description: Convert image to qcow2 format (requires qemu-utils)
+        postprocess: true
+        command: >
+          qemu-img convert -f raw -O qcow2 {{ $image }}.img {{ $image }}.qcow2
+          && rm {{ $image }}.img

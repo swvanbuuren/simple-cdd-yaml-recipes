@@ -37,6 +37,7 @@ actions:
       - keepassxc
       - libreoffice
       - libreoffice-gnome
+      - libreoffice-gtk3
       - qbittorrent
       - simple-scan
       - system-config-printer

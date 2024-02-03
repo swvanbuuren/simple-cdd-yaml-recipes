@@ -36,7 +36,6 @@ actions:
       - inkscape
       - keepassxc
       - libreoffice
-      - libreoffice-gnome
       - libreoffice-gtk3
       - qbittorrent
       - simple-scan

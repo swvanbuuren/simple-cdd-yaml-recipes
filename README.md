@@ -96,8 +96,8 @@ The package `ovmf` is required for UEFI support.
 
 Now create some images for testing, e.g.
 ```
-qemu-img create disk.img 10G
-qemu-img create second_disk.img 10G
+qemu-img create -f qcow2 disk.qcow2 10G
+qemu-img create -f qcow2 econd_disk.qcow2 10G
 ```
 Create a bash script stored as `image_run` with the following contents (don't
 forget to make it executable using `chmod +x image_run`)
@@ -115,8 +115,8 @@ qemu-system-x86_64 \
     -cpu host \
     ${cdrom} \
     -drive if=pflash,format=raw,readonly,file=/usr/share/ovmf/OVMF.fd \
-    -drive format=raw,file=disk.img \
-    -drive format=raw,file=second_disk.img
+    -drive format=qcow2,file=disk.qcow2 \
+    -drive format=qcow2,file=second_disk.qcow2
 ```
 
 ## Testing using Qemu

@@ -97,7 +97,7 @@ The package `ovmf` is required for UEFI support.
 Now create some images for testing, e.g.
 ```
 qemu-img create -f qcow2 disk.qcow2 10G
-qemu-img create -f qcow2 econd_disk.qcow2 10G
+qemu-img create -f qcow2 second_disk.qcow2 10G
 ```
 Create a bash script stored as `image_run` with the following contents (don't
 forget to make it executable using `chmod +x image_run`)

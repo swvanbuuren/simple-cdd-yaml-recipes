@@ -203,3 +203,6 @@ activate-mark-hook"
 (autoload 'octave-mode "octave-mod" nil t)
 (setq auto-mode-alist
       (cons '("\\.m$" . octave-mode) auto-mode-alist))
+
+(setq inhibit-startup-screen t)
+(setq initial-scratch-message nil)

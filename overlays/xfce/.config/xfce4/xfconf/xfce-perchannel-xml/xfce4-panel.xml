@@ -52,6 +52,9 @@
     <property name="plugin-12" type="string" value="clock">
       <property name="timezone" type="string" value="Europe/Berlin"/>
       <property name="digital-format" type="string" value="%a %e %b %R"/>
+      <property name="digital-time-format" type="string" value="%a %e %b %R"/>
+      <property name="digital-layout" type="uint" value="3"/>
+      <property name="digital-time-font" type="string" value="Ubuntu 9"/>
     </property>
     <property name="plugin-14" type="string" value="actions">
       <property name="appearance" type="uint" value="0"/>

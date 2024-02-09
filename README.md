@@ -133,14 +133,14 @@ desktop system using
 ./image_run
 ```
 
-## Functional testing using debos
+## Functional testing using [debos](https://github.com/go-debos/debos)
 
 While the previously described test method tests all installation image
 functionalities, it can be quite time consuming. An alternative approach, is to
-generate a debos recipe from a simple-cdd-yaml recipe and build and test its
-resulting image. Building a debos image is generally much quicker and once
-built, does not perform an installation process. Instead the image can be tested
-straight away.
+generate a [debos](https://github.com/go-debos/debos) recipe from a
+simple-cdd-yaml recipe and build and test its resulting image. Building a debos
+image is generally much quicker and once built, does not perform an installation
+process. Instead the image can be tested straight away.
 
 To generate a debos recipe, e.g. for the `desktop` recipe, issue the following:
 

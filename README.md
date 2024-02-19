@@ -90,7 +90,7 @@ for more information.
 To test the installation image Qemu can be used. Install the required packages
 using:
 ```
-sudo apt install qemu-utils qemu-system-x86 ovmf
+sudo apt install qemu-utils qemu-system-x86 ovmf qemu-system-gui
 ```
 The package `ovmf` is required for UEFI support.
 
@@ -107,14 +107,14 @@ forget to make it executable using `chmod +x image_run`)
 if [ $# -eq 0 ] ; then
     cdrom="-boot c"
 else
-    cdrom="-boot d -drive media=cdrom,readonly,file=${1}"
+    cdrom="-boot d -drive media=cdrom,readonly=on,file=${1}"
 fi
 qemu-system-x86_64 \
     -m 2048 \
     -enable-kvm \
     -cpu host \
     ${cdrom} \
-    -drive if=pflash,format=raw,readonly,file=/usr/share/ovmf/OVMF.fd \
+    -drive if=pflash,format=raw,readonly=on,file=/usr/share/ovmf/OVMF.fd \
     -drive format=qcow2,file=disk.qcow2 \
     -drive format=qcow2,file=second_disk.qcow2
 ```

@@ -206,3 +206,5 @@ activate-mark-hook"
 
 (setq inhibit-startup-screen t)
 (setq initial-scratch-message nil)
+
+(setq-default tab-width 4)

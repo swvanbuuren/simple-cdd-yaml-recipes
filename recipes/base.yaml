@@ -3,7 +3,7 @@
 {% set profile=profile or "base" -%}
 {% set mirror_components=mirror_components or "main" -%}
 {% set disk_type=disk_type or "DVD" -%}
-{% set dist=dist or "bookworm" -%}
+{% set dist=dist or "trixie" -%}
 {% set mirror=mirror or "http://ftp.de.debian.org/debian/" -%}
 {% set username=username or "user" -%}
 {% set user_fullname=user_fullname or "User" -%}

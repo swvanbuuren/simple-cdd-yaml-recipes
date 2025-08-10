@@ -3,6 +3,8 @@ images/
 profiles/
 tmp/
 debos/
+docker/
 .gnupg/
 docker_simple_cdd
 build_profile
+compare_kernel_versions

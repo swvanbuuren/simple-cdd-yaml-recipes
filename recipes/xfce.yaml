@@ -21,8 +21,8 @@ actions:
       - ncurses-term
       - network-manager-gnome
       - package-update-indicator
-      - policykit-1
-      - software-properties-gtk
+      - pkexec
+      - polkitd
       - unclutter-xfixes
       - suckless-tools
       - xfce4

@@ -4,7 +4,9 @@ profiles/
 tmp/
 debos/
 docker/
+docker_latest/
 .gnupg/
 docker_simple_cdd
+docker_simple_cdd_latest
 build_profile
 compare_kernel_versions

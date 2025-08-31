@@ -1,6 +1,7 @@
 {% set profile=profile or "base-desktop" -%}
 {% set mirror_components=mirror_components or "main" -%}
 {% set dist=dist or "trixie" -%}
+{% set nonfree_components=nonfree_components or "" -%}
 {% set username=username or "user" -%}
 {% set user_fullname=user_fullname or "Firstname Lastname" -%}
 {% set user_password=user_password or "user" -%}
@@ -27,6 +28,7 @@ actions:
       hostname: {{hostname}}
       domain_name: {{domain_name}}
       debos: {{debos}}
+      nonfree_components: {{nonfree_components}}
 
   - action: recipe
     description: Load xfce recipe

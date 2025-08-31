@@ -7,6 +7,7 @@
 {% set mirror=mirror or "http://deb.debian.org/debian" -%}
 {% set arch=arch or "amd64" -%}
 {% set disable_uefi32="'1'" if arch != "i386" else "'0'" %}
+{% set nonfree_components=nonfree_components or "" -%}
 {% set username=username or "user" -%}
 {% set user_fullname=user_fullname or "User" -%}
 {% set user_password=user_password or "user" -%}
@@ -39,6 +40,7 @@ actions:
       DEBIAN_MIRROR: {{mirror}}
       ARCH: {{arch}}
       DISABLE_UEFI_32: {{disable_uefi32}}
+      NONFREE_COMPONENTS: {{nonfree_components}}
 
   - action: preseed
     description: Basic preseed file for minimum Debian system with EFI boot

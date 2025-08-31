@@ -1,4 +1,5 @@
 {% set profile=profile or "base-desktop" -%}
+{% set mirror_components=mirror_components or "main" -%}
 {% set dist=dist or "trixie" -%}
 {% set username=username or "user" -%}
 {% set user_fullname=user_fullname or "Firstname Lastname" -%}
@@ -17,6 +18,7 @@ actions:
     recipe: recipes/base.yaml
     variables:
       profile: {{profile}}
+      mirror_components: {{mirror_components}}
       dist: {{dist}}
       username: {{username}}
       user_fullname: {{user_fullname}}

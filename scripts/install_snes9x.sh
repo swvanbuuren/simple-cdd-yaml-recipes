@@ -6,7 +6,7 @@ wget -O /home/${USERNAME}/.local/bin/Snes9x.AppImage https://github.com/snes9xgi
 chmod +x /home/${USERNAME}/.local/bin/Snes9x.AppImage
 mkdir -p /home/${USERNAME}/.local/share/applications
 wget -O /home/${USERNAME}/.local/share/applications/snes9x_logo.png https://upload.wikimedia.org/wikipedia/commons/b/bd/SNES9X_logo.png
-cat > /home/${USERNAME}/.local/share/applications/Snes9x.dekstop << EOL
+cat > /home/${USERNAME}/.local/share/applications/Snes9x.desktop << EOL
 [Desktop Entry]
 Version=1.0
 Type=Application
@@ -19,3 +19,4 @@ Path=
 Terminal=false
 StartupNotify=false
 EOL
+chown -R $USERNAME:$USERNAME /home/${USERNAME}/.local

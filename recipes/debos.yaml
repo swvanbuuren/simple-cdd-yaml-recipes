@@ -95,7 +95,6 @@ actions:
         recommends: true
         packages:
           - linux-image-{{ architecture }}
-          - libgles2-mesa
 
       - action: run
         description: Install kernel into EFI

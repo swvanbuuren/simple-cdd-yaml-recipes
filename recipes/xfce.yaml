@@ -71,3 +71,7 @@ actions:
     script: scripts/install_packages.sh
     variables:
       packages: fonts-ubuntu
+
+  - action: run
+    description: Install latest Greybird GTK Theme
+    script: scripts/install_greybird_theme.sh

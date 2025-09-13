@@ -10,5 +10,5 @@ ninja
 ninja install
 cd ..
 rm -rf Greybird
-apt-get install purge -y $REQUIRED_PACKAGES
+apt-get purge -y $REQUIRED_PACKAGES
 apt-get autoremove -y

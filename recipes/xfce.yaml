@@ -19,7 +19,8 @@ actions:
       - mugshot
       - ncurses-base
       - ncurses-term
-      - network-manager-gnome
+      - network-manager-applet
+      - nm-connection-editor
       - package-update-indicator
       - pkexec
       - polkitd

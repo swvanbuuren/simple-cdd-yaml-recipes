@@ -7,4 +7,3 @@ apt-get install -y ./qt5gtk2_1.0-0vanir1_amd64.deb
 touch $HOME/.xsessionrc
 echo "# Qt should respect platform theme" >> $HOME/.xsessionrc
 echo "export QT_QPA_PLATFORMTHEME=qt5gtk2" >> $HOME/.xsessionrc
-EOF

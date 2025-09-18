@@ -76,3 +76,7 @@ actions:
   - action: run
     description: Install latest Greybird GTK Theme
     script: scripts/install_greybird_theme.sh
+
+  - action: run
+    description: Fix network-manager-applet icon
+    command: sed -i 's|^Exec=nm-applet$|Exec=nm-applet --indicator|' /etc/xdg/autostart/nm-applet.desktop

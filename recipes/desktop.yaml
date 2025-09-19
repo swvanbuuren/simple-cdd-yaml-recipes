@@ -54,6 +54,7 @@ actions:
     description: Configure git
     script: scripts/configure_git.sh
     variables:
+      username: {{username}}
       user_fullname: {{user_fullname}}
       user_email: {{user_email}}
       editor: emacs -nw

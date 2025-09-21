@@ -10,6 +10,7 @@
 {% set domain_name=domain_name or "domain" -%}
 {% set user_email=user_email or "user@domain.com" -%}
 {% set debos=debos or false %}
+{% set efi_support=efi_support or true %}
 
 profile: {{profile}}
 
@@ -29,6 +30,7 @@ actions:
       domain_name: {{domain_name}}
       debos: {{debos}}
       nonfree_components: {{nonfree_components}}
+      efi_support: {{efi_support}}
 
   - action: recipe
     description: Load xfce recipe

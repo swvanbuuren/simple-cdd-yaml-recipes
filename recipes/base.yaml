@@ -16,6 +16,7 @@
 {% set domain_name=domain_name or "domain" -%}
 {% set swapsize_mb=swapsize_mb or "6000" -%}
 {% set debos=debos or false %}
+{% set efi_support=efi_support or true %}
 
 profile: {{profile}}
 
@@ -54,6 +55,7 @@ actions:
       hostname: {{hostname}}
       domain: {{domain_name}}
       swapsize_mb: {{swapsize_mb}}
+      efi_support: {{efi_support}}
       
   - action: apt
     description: Base packages
@@ -111,9 +113,13 @@ actions:
 
 {% if not debos %}
 
+{% if efi_support %}
+
   - action: run
     description: Make sure debian UEFI file is registered as boot entry
     command: grub-install --efi-directory /boot/efi --force-extra-removable --recheck && update-grub
+
+{% endif%}
 
   - action: run
     description: Configure grub (output and no menu shown)

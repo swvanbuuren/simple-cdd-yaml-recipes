@@ -258,11 +258,13 @@ d-i partman-lvm/confirm_nooverwrite boolean true
 d-i partman-auto/choose_recipe select gpt-boot-root-swap
 d-i partman-auto/expert_recipe string         \
    gpt-boot-root-swap ::                      \
+{% if efi_support -%}
       200 200 200 free                        \
          $iflabel{ gpt }                      \
 	     $reusemethod{ }                      \
          method{ efi }                        \
 	     format{ } .                          \
+{% endif -%}
       512 512 512 ext3                        \
          $primary{ }                          \
 	     $bootable{ }                         \
@@ -287,7 +289,7 @@ d-i partman/confirm boolean true
 d-i partman/confirm_nooverwrite boolean true
 
 # Force UEFI booting ('BIOS compatibility' will be lost). Default: false.
-d-i partman-efi/non_efi_system boolean true
+d-i partman-efi/non_efi_system boolean {{ 'true' if  efi_support else 'false' }}
 # Ensure the partition table is GPT - this is required for EFI
 d-i partman-partitioning/choose_label select gpt
 d-i partman-partitioning/default_label string gpt

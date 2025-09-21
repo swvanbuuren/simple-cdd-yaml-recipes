@@ -275,7 +275,7 @@ d-i partman-auto/expert_recipe string         \
          method{ format } format{ }           \
          use_filesystem{ } filesystem{ ext4 } \
          mountpoint{ / } .                    \
-      65536 65536 65536 linux-swap            \
+      {{swapsize_mb}} {{swapsize_mb}} {{swapsize_mb}} linux-swap               \
          $primary{ }                          \
          method{ swap } format{ } .
 

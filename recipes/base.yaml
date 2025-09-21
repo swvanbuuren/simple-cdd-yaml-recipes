@@ -14,6 +14,7 @@
 {% set root_password=root_password or "root" -%}
 {% set hostname=hostname or "base" -%}
 {% set domain_name=domain_name or "domain" -%}
+{% set swapsize_mb=swapsize_mb or "6000" -%}
 {% set debos=debos or false %}
 
 profile: {{profile}}
@@ -52,6 +53,7 @@ actions:
       root_password: {{root_password}}
       hostname: {{hostname}}
       domain: {{domain_name}}
+      swapsize_mb: {{swapsize_mb}}
       
   - action: apt
     description: Base packages

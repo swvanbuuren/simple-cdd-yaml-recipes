@@ -9,8 +9,8 @@
 {% set hostname=hostname or "desktop" -%}
 {% set domain_name=domain_name or "domain" -%}
 {% set user_email=user_email or "user@domain.com" -%}
-{% set debos=debos or false %}
-{% set efi_support=efi_support or true %}
+{% set no_efi_support=no_efi_support or false -%}
+{% set debos=debos or false -%}
 
 profile: {{profile}}
 
@@ -30,7 +30,7 @@ actions:
       domain_name: {{domain_name}}
       debos: {{debos}}
       nonfree_components: {{nonfree_components}}
-      efi_support: {{efi_support}}
+      no_efi_support: {{no_efi_support}}
 
   - action: apt
     description: Utility packages

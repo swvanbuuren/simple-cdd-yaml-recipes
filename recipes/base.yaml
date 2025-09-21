@@ -119,6 +119,12 @@ actions:
     description: Make sure debian UEFI file is registered as boot entry
     command: grub-install --efi-directory /boot/efi --force-extra-removable --recheck && update-grub
 
+{% else %}
+
+  - action: run
+    description: Make sure Debian is registered as boot entry
+    command: grub-install --recheck && update-grub
+
 {% endif %}
 
   - action: run

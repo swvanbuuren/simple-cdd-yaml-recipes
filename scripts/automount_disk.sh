@@ -18,5 +18,6 @@ case "$DISK_TYPE" in
         dump=0
         pass=0
         ;;
+esac
 
 echo "UUID=${UUID}       ${MOUNT_POINT}            ${fstype}    ${mount_opts}       ${dump}       ${pass}" >> /etc/fstab

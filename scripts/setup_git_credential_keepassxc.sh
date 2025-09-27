@@ -19,3 +19,4 @@ if [ "${PROCEED}" == "OK" ] ; then
 fi
 EOL
 chmod +x ${CONFIGURE_CMD}
+chown -R ${USERNAME}:${USERNAME} ${BIN_DIR}

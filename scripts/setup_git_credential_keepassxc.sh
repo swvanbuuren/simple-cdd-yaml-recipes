@@ -13,6 +13,7 @@ cat > ${CONFIGURE_CMD} << EOL
 read -p "Make sure KeePassXC is running [OK]" -n 1 -r PROCEED
 PROCEED=${name:-OK}
 if [ "${PROCEED}" == "OK" ] ; then
+    #!/bin/bash
     git-credential-keepassxc caller add me
     git-credential-keepassxc configure
     git-credential-keepassxc caller add --uid 1000 --gid 1000 /usr/lib/git-core/git

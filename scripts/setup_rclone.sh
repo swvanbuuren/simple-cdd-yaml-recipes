@@ -4,7 +4,8 @@ GDRIVE_USER={{gdrive_user}}
 apt-get -y upate
 apt-get install --no-install-recommends -y rclone fuse
 chown root:${USERNAME} /home/${USERNAME}/.config/rclone/rclone.conf
-# see https://tcude.net/setting-up-rclone-with-google-drive/
+# with the following in-place, see https://rclone.org/drive/ how to refresh the token (take defaults wherever suggested and don't choose advanced config)
+# see https://tcude.net/setting-up-rclone-with-google-drive/ for more background details of the following setup
 mkdir -p /mnt/gdrive
 cat > /etc/systemd/system/gdrive.service << EOL
 [Unit]
